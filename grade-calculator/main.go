@@ -8,7 +8,9 @@ func main() {
 	fmt.Print("Masukkan nilai: ")
 	fmt.Scanln(&grade)
 
-	if grade >= 90 {
+	if grade < 0 || grade > 100 {
+		fmt.Println("Nilai tidak valid. Masukkan nilai antara 0 sampai 100.")
+	} else if grade >= 90 {
 		fmt.Println("Grade: A")
 	} else if grade >= 80 {
 		fmt.Println("Grade: B")

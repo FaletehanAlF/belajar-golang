@@ -14,6 +14,9 @@ func main() {
 	fmt.Print("Masukkan password: ")
 	fmt.Scanln(&password)
 
-	fmt.Println("Username yang dimasukkan:", username)
-	fmt.Println("Password yang dimasukkan:", password)
+	if username == "Falen" && password == "123" {
+		fmt.Println("Login berhasil!")
+	} else {
+		fmt.Println("Username atau password salah!")
+	}
 }

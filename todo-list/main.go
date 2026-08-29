@@ -37,6 +37,28 @@ func main() {
 				}
 			}
 
+		} else if choice == 3 {
+			if len(tasks) == 0 {
+				fmt.Println("Tidak ada tugas yang bisa dihapus.")
+			} else {
+				fmt.Println("\n=== HAPUS TUGAS ===")
+
+				for i, task := range tasks {
+					fmt.Printf("%d. %s\n", i+1, task)
+				}
+
+				var taskNumber int
+				fmt.Print("Masukkan nomor tugas yang ingin dihapus: ")
+				fmt.Scanln(&taskNumber)
+
+				if taskNumber >= 1 && taskNumber <= len(tasks) {
+					tasks = append(tasks[:taskNumber-1], tasks[taskNumber:]...)
+					fmt.Println("Tugas berhasil dihapus!")
+				} else {
+					fmt.Println("Nomor tugas tidak valid.")
+				}
+			}
+
 		} else if choice == 4 {
 			fmt.Println("Terima kasih!")
 			break
